@@ -25,13 +25,15 @@ then
     conda config --add channels conda-forge
     conda config --add channels vlsida-eda
 
+    conda install -q -y -c conda-forge mamba
+
     # Install iverilog from conda-eda
-    conda install -q -y -c litex-hub iverilog
+    mamba install -q -y -c litex-hub iverilog
 
     # Install rest of the tools from vlsida-eda
     for tool in ${TOOLS}
     do
-        conda install -q -y -c vlsida-eda ${tool}
+        mamba install -q -y -c vlsida-eda ${tool}
     done
 
     # Install required Python packages
